@@ -1,0 +1,76 @@
+\documentclass[letter,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{datetime}
+\usepackage{indentfirst}
+\usepackage{wasysym}
+\usepackage{placeins}
+
+\newdateformat{mydate}{\THEDAY\space \shortmonthname[\THEMONTH] \THEYEAR}
+
+\begin{document}
+
+%\maketitle
+
+\begin{flushleft}
+	\begin{tabular}{l l}
+		To: & Prof. Andy Olson \\
+		From: & Sam Harkness \\
+		Regarding: & EELE445 Lab 5 Report \\
+		Date: & \mydate\today
+	\end{tabular}
+\end{flushleft}
+
+\begin{enumerate}
+	\item Set the oscilloscope for a sample rate of 100 Ks/sec, 20MHz BW, 10,000 points, and 1mV/div.  Disconnect the probe from the scope.
+	
+	\begin{tabular}{l | l | l}
+		\hline
+					& Oscilloscope 	& MATLAB 				\\
+		\hline
+		DC			& 995 $mV$ 		& -9.899e-05 $V$			\\ 
+		\hline
+		Pk-Pk		& 5.5 $mV$		& .00042 $V_{p-p}$		\\
+		\hline
+		$\sigma$	& 550 $mV$		& 5.6886e-05 $V_{rms}$	\\
+		\hline
+	\end{tabular}
+	
+	\begin{itemize}
+		\item $\Delta V$ is 20 $\mu V$, which corresponds to a maximum range of 10.24 $mV$.  The extra 2.24 $mV$ above the range displayed by the scope is still included, but not displayed.
+	\end{itemize}
+	
+	\item Set the oscilloscope for a sample rate of 100 Ks/sec, 20MHz BW, 10,000 points, and 200mV/div.  Disconnect the probe from the scope.
+	
+	\begin{itemize}
+		\item $\Delta V$ is 4 $mV$, which corresponds to a maximum range of 2.048 $V$.  The extra 448 $mV$ above the range displayed by the scope is still included, but not displayed.
+	\end{itemize}
+	
+	\item Using the same settings from 2, connect a signal generator and apply a 1 KHz sine wave of 1 $V_{p-p}$.
+	
+	\begin{itemize}
+		\item $\Delta V$ is 4 $mV$, which corresponds to a maximum range of 2.048 $V$.  The extra 448 $mV$ above the range displayed by the scope is still included, but not displayed.
+		
+		\item The dynamic range of the scope is approximately 48.7 $dB$.
+	\end{itemize}
+	
+	\item Set the oscilloscope for a sample rate of 100 Ks/sec, 10,000 points, and 200mV/div. Now connect a signal generator and apply a 1 KHz sine wave of 2 $V{p-p}$.
+	
+	\begin{itemize}
+		\item $\Delta V$ is 4 $mV$, which corresponds to a maximum range of 2.048 $V$.  The extra 448 $mV$ above the range displayed by the scope is still included, but not displayed.
+	\end{itemize}
+	
+	\item Change the input waveform to a 100 Hz triangle waveform 4 $V_{p-p}$.
+	
+	\begin{itemize}
+		\item $\Delta V$ is 4 $mV$, which corresponds to a maximum range of 2.048 $V$.  The extra 448 $mV$ above the range displayed by the scope is still included, but not displayed.
+		
+		\item The triangle wave is clipped beyond +/- 1 $V$.
+	\end{itemize}
+	
+\end{enumerate}
+
+\end{document}
